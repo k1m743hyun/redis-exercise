@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class RedisTemplateStringService {
@@ -19,6 +21,7 @@ public class RedisTemplateStringService {
      * @param requestDto
      */
     public void setPerson(PersonDto requestDto) {
+        log.info("{}.{}", getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
         redisTemplate.opsForValue().set(requestDto.getKey(), requestDto);
     }
 
@@ -28,6 +31,7 @@ public class RedisTemplateStringService {
      * @return
      */
     public PersonDto getPerson(String personId) {
+        log.info("{}.{}", getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
         return PersonDto.of(redisTemplate.opsForValue().get(PersonDto.keyOf(personId)));
     }
 
@@ -36,6 +40,7 @@ public class RedisTemplateStringService {
      * @param requestDtos
      */
     public void setPersonList(List<PersonDto> requestDtos) {
+        log.info("{}.{}", getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
         Map<String, PersonDto> requestDtoMap = requestDtos.stream()
             .collect(Collectors.toMap(
                 PersonDto::getKey,
@@ -50,6 +55,7 @@ public class RedisTemplateStringService {
      * @return
      */
     public List<PersonDto> getPersonList(List<String> personIds) {
+        log.info("{}.{}", getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
         return redisTemplate.opsForValue()
             .multiGet(personIds.stream()
                 .map(PersonDto::keyOf)
