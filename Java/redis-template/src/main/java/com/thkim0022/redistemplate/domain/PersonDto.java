@@ -1,4 +1,4 @@
-package com.thkim0022.redisexercise.data.dto;
+package com.thkim0022.redistemplate.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.ObjectMapper;

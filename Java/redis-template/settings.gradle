@@ -5,4 +5,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'redis-exercise'
+rootProject.name = 'redis-template'

@@ -1,13 +1,13 @@
-package com.thkim0022.redisexercise;
+package com.thkim0022.redistemplate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RedisExerciseApplication {
+public class RedisTemplateApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RedisExerciseApplication.class, args);
+		SpringApplication.run(RedisTemplateApplication.class, args);
 	}
 
 }
