@@ -119,6 +119,71 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "List",
+			"item": [
+				{
+					"name": "setPerson",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"thkim0022\",\n    \"name\": \"Taehyun Kim\",\n    \"dept\": \"MediaPlatform\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/redis/string",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"redis",
+								"string"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPersonList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"thkim0022\",\n    \"k1m743hyun\",\n    \"k1mhyun743\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/redis/string/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"redis",
+								"string",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
