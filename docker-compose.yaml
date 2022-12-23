@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  redis:
+    container_name: redis-server
+    image: redis:latest
+    ports:
+      - '127.0.0.1:6379:6379'
+  redisinsight:
+    container_name: redis-insight
+    image: redislabs/redisinsight:latest
+    ports:
+      - '127.0.0.1:8001:8001'
