@@ -1,7 +1,7 @@
 package com.thkim0022.redistemplate.controller;
 
 import com.thkim0022.redistemplate.domain.PersonDto;
-import com.thkim0022.redistemplate.service.RedisTemplateService;
+import com.thkim0022.redistemplate.service.RedisTemplateStringService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,31 +12,45 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@RequestMapping("/redis")
+@RequestMapping("/redis/string")
 @RestController
-public class RedisTemplateController {
+public class RedisTemplateStringController {
 
-    private final RedisTemplateService service;
+    private final RedisTemplateStringService service;
 
-    // Set
+    /**
+     * String - Set
+     * @param requestDto
+     */
     @PostMapping
-    public void savePerson(@RequestBody PersonDto requestDto) {
-        service.savePerson(requestDto);
+    public void setPerson(@RequestBody PersonDto requestDto) {
+        service.setPerson(requestDto);
     }
 
-    // Get
+    /**
+     * String - Get
+     * @param personId
+     * @return
+     */
     @GetMapping("/{personId}")
     public PersonDto getPerson(@PathVariable String personId) {
         return service.getPerson(personId);
     }
 
-    // Multi Set
+    /**
+     * String - Multi Set
+     * @param requestDtos
+     */
     @PostMapping("/all")
-    public void savePersonList(@RequestBody List<PersonDto> requestDtos) {
-        service.savePersonList(requestDtos);
+    public void setPersonList(@RequestBody List<PersonDto> requestDtos) {
+        service.setPersonList(requestDtos);
     }
 
-    // Multi Get
+    /**
+     * String - Multi Get
+     * @param personIds
+     * @return
+     */
     @GetMapping("/all")
     public List<PersonDto> getPersonList(@RequestBody List<String> personIds) {
         return service.getPersonList(personIds);
