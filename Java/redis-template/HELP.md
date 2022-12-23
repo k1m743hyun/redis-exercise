@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.thkim0022.redis-exercise' is invalid and this project uses 'com.thkim0022.redistemplate' instead.
+* The original package name 'com.thkim0022.redis-template' is invalid and this project uses 'com.thkim0022.redistemplate' instead.
 
 # Getting Started
 
