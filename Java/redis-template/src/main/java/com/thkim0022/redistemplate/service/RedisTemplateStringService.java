@@ -17,7 +17,7 @@ public class RedisTemplateStringService {
     private final RedisTemplate<String, Object> redisTemplate;
 
     /**
-     * String - Set
+     * STRING - Set
      * @param requestDto
      */
     public void setPerson(PersonDto requestDto) {
@@ -26,7 +26,7 @@ public class RedisTemplateStringService {
     }
 
     /**
-     * String - Get
+     * STRING - Get
      * @param personId
      * @return
      */
@@ -36,7 +36,7 @@ public class RedisTemplateStringService {
     }
 
     /**
-     * String - Multi Set
+     * STRING - Multi Set
      * @param requestDtos
      */
     public void setPersonList(List<PersonDto> requestDtos) {
@@ -50,7 +50,7 @@ public class RedisTemplateStringService {
     }
 
     /**
-     * String - Multi Get
+     * STRING - Multi Get
      * @param personIds
      * @return
      */
