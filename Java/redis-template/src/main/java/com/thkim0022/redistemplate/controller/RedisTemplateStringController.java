@@ -21,7 +21,7 @@ public class RedisTemplateStringController {
     private final RedisTemplateStringService service;
 
     /**
-     * String - Set
+     * STRING - Set
      * @param requestDto
      */
     @PostMapping
@@ -31,7 +31,7 @@ public class RedisTemplateStringController {
     }
 
     /**
-     * String - Get
+     * STRING - Get
      * @param personId
      * @return
      */
@@ -42,7 +42,7 @@ public class RedisTemplateStringController {
     }
 
     /**
-     * String - Multi Set
+     * STRING - Multi Set
      * @param requestDtos
      */
     @PostMapping("/all")
@@ -52,7 +52,7 @@ public class RedisTemplateStringController {
     }
 
     /**
-     * String - Multi Get
+     * STRING - Multi Get
      * @param personIds
      * @return
      */
