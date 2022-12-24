@@ -16,11 +16,21 @@ public class RedisTemplateSetController {
 
     private final RedisTemplateSetService service;
 
+    /**
+     * SET - Set
+     * @param requestDto
+     */
+    @PostMapping
     public void setPerson(@RequestBody PersonDto requestDto) {
         log.info("{}.{}", getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
         service.setPerson(requestDto);
     }
 
+    /**
+     * SET - Get
+     * @param personId
+     * @return
+     */
     @GetMapping("/{personId}")
     public List<PersonDto> getPersonList(@PathVariable String personId) {
         log.info("{}.{}", getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
