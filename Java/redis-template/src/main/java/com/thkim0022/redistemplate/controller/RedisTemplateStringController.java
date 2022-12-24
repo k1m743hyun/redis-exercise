@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/redis/string")
 @RestController
+@RequestMapping("/redis/string")
 public class RedisTemplateStringController {
 
     private final RedisTemplateStringService service;
