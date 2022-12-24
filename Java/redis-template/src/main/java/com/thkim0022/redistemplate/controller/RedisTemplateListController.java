@@ -21,7 +21,7 @@ public class RedisTemplateListController {
     private final RedisTemplateListService service;
 
     /**
-     * List - Set
+     * LIST - Set
      * @param requestDto
      */
     @PostMapping
@@ -31,7 +31,7 @@ public class RedisTemplateListController {
     }
 
     /**
-     * List - Get
+     * LIST - Get
      * @param personId
      * @return
      */
