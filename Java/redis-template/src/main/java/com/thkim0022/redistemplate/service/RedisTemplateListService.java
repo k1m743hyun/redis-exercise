@@ -16,7 +16,7 @@ public class RedisTemplateListService {
     private final RedisTemplate<String, Object> redisTemplate;
 
     /**
-     * List - Set
+     * LIST - Set
      * @param requestDto
      */
     public void setPerson(PersonDto requestDto) {
@@ -26,7 +26,7 @@ public class RedisTemplateListService {
     }
 
     /**
-     * List - Get
+     * LIST - Get
      * @param personId
      * @return
      */
