@@ -7,181 +7,384 @@
 	},
 	"item": [
 		{
-			"name": "String",
+			"name": "redis-template",
 			"item": [
 				{
-					"name": "setPerson",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": \"thkim0022\",\n    \"name\": \"Taehyun Kim\",\n    \"dept\": \"MediaPlatform\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "ZSet",
+					"item": [
+						{
+							"name": "setPerson",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"thkim0022\",\n    \"name\": \"Taehyun Kim\",\n    \"dept\": \"MediaPlatform\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/redis/zset/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"zset",
+										"1"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:8080/redis/string",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"redis",
-								"string"
-							]
+						{
+							"name": "getPersonList",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    \"thkim0022\",\n    \"k1m743hyun\",\n    \"k1mhyun743\"\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/redis/zset/thkim0022",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"zset",
+										"thkim0022"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "getPerson",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/redis/string/thkim0022",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"redis",
-								"string",
-								"thkim0022"
-							]
+					"name": "Hash",
+					"item": [
+						{
+							"name": "setPerson",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"thkim0022\",\n    \"name\": \"Taehyun Kim\",\n    \"dept\": \"MediaPlatform\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/redis/hash/A0001",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"hash",
+										"A0001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getPerson",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    \"thkim0022\",\n    \"k1m743hyun\",\n    \"k1mhyun743\"\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/redis/hash/thkim0022/A0001",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"hash",
+										"thkim0022",
+										"A0001"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "setPersonList",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[\n    {\n        \"id\": \"k1m743hyun\",\n        \"name\": \"Taehyun Kim\",\n        \"dept\": \"hello\"\n    },\n    {\n        \"id\": \"k1mhyun743\",\n        \"name\": \"Hyuntae Kim\",\n        \"dept\": \"world\"\n    }\n]",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "Set",
+					"item": [
+						{
+							"name": "setPerson",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"thkim0022\",\n    \"name\": \"Taehyun Kim\",\n    \"dept\": \"MediaPlatform\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/redis/set",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"set"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:8080/redis/string/all",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"redis",
-								"string",
-								"all"
-							]
+						{
+							"name": "getPersonList",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    \"thkim0022\",\n    \"k1m743hyun\",\n    \"k1mhyun743\"\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/redis/set/thkim0022",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"set",
+										"thkim0022"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "getPersonList",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[\n    \"thkim0022\",\n    \"k1m743hyun\",\n    \"k1mhyun743\"\n]",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "List",
+					"item": [
+						{
+							"name": "setPerson",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"thkim0022\",\n    \"name\": \"Taehyun Kim\",\n    \"dept\": \"MediaPlatform\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/redis/list",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"list"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:8080/redis/string/all",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"redis",
-								"string",
-								"all"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "List",
-			"item": [
-				{
-					"name": "setPerson",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": \"thkim0022\",\n    \"name\": \"Taehyun Kim\",\n    \"dept\": \"MediaPlatform\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+						{
+							"name": "getPersonList",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/redis/list/thkim0022",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"list",
+										"thkim0022"
+									]
 								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8080/redis/string",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"redis",
-								"string"
-							]
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "getPersonList",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[\n    \"thkim0022\",\n    \"k1m743hyun\",\n    \"k1mhyun743\"\n]",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "String",
+					"item": [
+						{
+							"name": "setPerson",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"thkim0022\",\n    \"name\": \"Taehyun Kim\",\n    \"dept\": \"MediaPlatform\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/redis/string",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"string"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:8080/redis/string/all",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"redis",
-								"string",
-								"all"
-							]
+						{
+							"name": "getPerson",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/redis/string/thkim0022",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"string",
+										"thkim0022"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "setPersonList",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"id\": \"k1m743hyun\",\n        \"name\": \"Taehyun Kim\",\n        \"dept\": \"hello\"\n    },\n    {\n        \"id\": \"k1mhyun743\",\n        \"name\": \"Hyuntae Kim\",\n        \"dept\": \"world\"\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/redis/string/all",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"string",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getPersonList",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    \"thkim0022\",\n    \"k1m743hyun\",\n    \"k1mhyun743\"\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/redis/string/all",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"redis",
+										"string",
+										"all"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				}
 			]
 		}
