@@ -1,4 +1,4 @@
-package com.thkim0022.redistemplate;
+package com.k1m743hyun.redistemplate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

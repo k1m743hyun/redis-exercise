@@ -1,42 +1,41 @@
-package com.thkim0022.redistemplate.service;
+package com.k1m743hyun.redistemplate.service;
 
-import com.thkim0022.redistemplate.domain.PersonDto;
+import com.k1m743hyun.redistemplate.domain.PersonDto;
+import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @RequiredArgsConstructor
 @Service
-public class RedisTemplateSetService {
+public class RedisTemplateListService {
 
     private final RedisTemplate<String, Object> redisTemplate;
 
     /**
-     * SET - Set
+     * LIST - Set
      * @param requestDto
      */
     public void setPerson(PersonDto requestDto) {
         log.info("{}.{}", getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
-        redisTemplate.opsForSet().add(requestDto.getKey(), requestDto);
+        //redisTemplate.opsForList().leftPush(requestDto.getKey(), requestDto);
+        redisTemplate.opsForList().rightPush(requestDto.getKey(), requestDto);
     }
 
     /**
-     * SET - Get
+     * LIST - Get
      * @param personId
      * @return
      */
     public List<PersonDto> getPersonList(String personId) {
         log.info("{}.{}", getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
-        return redisTemplate.opsForSet()
-                .scan(PersonDto.keyOf(personId), ScanOptions.scanOptions().match("*").build())
-                .stream()
-                .map(PersonDto::of)
-                .collect(Collectors.toList());
+        return redisTemplate.opsForList()
+            .range(PersonDto.keyOf(personId), 0, -1)
+            .stream()
+            .map(PersonDto::of)
+            .collect(Collectors.toList());
     }
 }

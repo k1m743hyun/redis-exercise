@@ -1,6 +1,6 @@
-package com.thkim0022.redistemplate.service;
+package com.k1m743hyun.redistemplate.service;
 
-import com.thkim0022.redistemplate.domain.PersonDto;
+import com.k1m743hyun.redistemplate.domain.PersonDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;

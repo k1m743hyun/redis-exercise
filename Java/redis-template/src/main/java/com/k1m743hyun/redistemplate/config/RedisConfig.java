@@ -1,4 +1,4 @@
-package com.thkim0022.redistemplate.config;
+package com.k1m743hyun.redistemplate.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

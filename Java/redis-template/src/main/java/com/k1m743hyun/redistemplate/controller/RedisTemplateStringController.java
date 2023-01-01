@@ -1,7 +1,7 @@
-package com.thkim0022.redistemplate.controller;
+package com.k1m743hyun.redistemplate.controller;
 
-import com.thkim0022.redistemplate.domain.PersonDto;
-import com.thkim0022.redistemplate.service.RedisTemplateStringService;
+import com.k1m743hyun.redistemplate.domain.PersonDto;
+import com.k1m743hyun.redistemplate.service.RedisTemplateStringService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

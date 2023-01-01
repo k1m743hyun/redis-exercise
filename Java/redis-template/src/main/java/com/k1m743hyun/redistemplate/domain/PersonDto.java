@@ -1,4 +1,4 @@
-package com.thkim0022.redistemplate.domain;
+package com.k1m743hyun.redistemplate.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.ObjectMapper;
