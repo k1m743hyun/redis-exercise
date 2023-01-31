@@ -27,7 +27,7 @@ public class RedisAnnotationService {
         PersonDto person = PersonDto.builder()
             .id(personId)
             .name("HyunTae Kim")
-            .dept("Megazone")
+            //.dept("Megazone")
             .build();
         return setPerson(person);
     }

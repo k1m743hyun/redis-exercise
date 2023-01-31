@@ -22,5 +22,5 @@ public class PersonDto {
 
     private String id;
     private String name;
-    private String dept;
+    //private String dept;
 }
